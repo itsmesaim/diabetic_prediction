@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .main {
+            display: flex;
+            width: -webkit-fill-available;
+            background: #bdedf2;
+            height: -webkit-fill-available;
+            margin: none;
+            padding: none;
+        }
+
+        .parent-div {
+            width: 50%;
+            justify-content: space-around;
+            margin-top: 5%;
+            margin-left: 0;
+            margin-right: 0;
+            height: 100%;
+        }
+
+
+        .image-div {
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+            height: 100%;
+            margin: 5%;
+
+
+        }
+
+        .image-class {
+            width: 100%;
+            height: 100%;
+
+        }
+
+
+
+        .secondbox {
+            height: 90%;
+            width: 100%;
+
+        }
+
+        .secondbox-heading {
+
+            margin-left: 5%;
+            margin-top: -5%;
+            height: 30%;
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 40px;
+            color: #312f2f;
+        }
+
+        .secondbox-selectheading {
+            font-style: normal;
+            margin-left: 10%;
+            font-weight: 600;
+            font-size: 17px;
+            color: #53828C;
+        }
+
+
+
+        .selectbox {
+            margin-top: 5%;
+            margin-left: 5%;
+            height: 55px;
+            background: #53828C;
+            box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 7px;
+        }
+
+        .selectbox-data {
+            width: 100%;
+            height: 20%;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 19px;
+            line-height: 28px;
+            color: #FAFAFA;
+        }
+
+
+
+        .button {
+
+            margin-top: 10%;
+            display: flex;
+            height: 30%;
+            width: 60%;
+            justify-content: space-around;
+
+        }
+
+        .previous {
+            border: none;
+            width: 25%;
+            height: 50px;
+            left: 81px;
+            top: 650px;
+
+            background: #90CBD9;
+            border-radius: 2px;
+        }
+
+        .next {
+            border: none;
+            width: 25%;
+            height: 50px;
+            left: 300px;
+            top: 650px;
+
+            background: #90CBD9;
+            border-radius: 2px;
+        }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fun() {
+            let radio1 = document.getElementById('1');
+            let radio2 = document.getElementById('2');
+            let radio3 = document.getElementById('3');
+            let radio4 = document.getElementById('4');
+            let selectedType = null;
+            if (radio1.checked) {
+                selectedType = "60"
+            }
+            if (radio2.checked) {
+                selectedType = "150"
+            }
+            if (radio3.checked) {
+                selectedType = "350"
+            }
+            if (radio4.checked) {
+                selectedType = "700"
+            }
+
+            let loadData = JSON.parse(localStorage.getItem('data'))
+            let data = { ...loadData, insulin: selectedType }
+            localStorage.setItem("data", JSON.stringify(data))
+            window.location.href = 'fifthpage.html'
+        }
+        function loadPrevious() {
+            console.log("Sample 134")
+            window.location.href = 'thirdpage.html'
+        }
+    </script>
+    <div class="main">
+        <div class="parent-div">
+            <div>
+                <div class="secondbox-heading">
+                    <p>
+                        Do you experience any of the following symptoms after consuming a meal?
+                    </p>
+                </div>
+                <div class="secondbox-selectheading">
+                    <p>When you touch your upper arm, does it feel:</p>
+                </div>
+
+                <div class="selectbox">
+                    <div class="selectbox-data">
+                        <input id="1" type="radio" name="vehicle1" value="Bike">
+                        <label for="vehicle1"> No symptoms</label><br>
+                    </div>
+                </div>
+                <div class="selectbox">
+                    <div class="selectbox-data">
+                        <input id="2" type="radio" name="vehicle1" value="Bike">
+                        <label for="vehicle1"> Mild symptoms (slight shakiness, increased heart rate, or mild
+                            sweating)</label><br>
+                    </div>
+
+
+                </div>
+                <div class="selectbox">
+                    <div class="selectbox-data">
+                        <input id="3" type="radio" name="vehicle1" value="Bike">
+                        <label for="vehicle1">Moderate symptoms (significant shakiness, increased heart rate, sweating,
+                            or mild confusion)
+
+                        </label><br>
+                    </div>
+                </div>
+                <div class="selectbox">
+                    <div class="selectbox-data">
+                        <input id="4" type="radio" name="vehicle1" value="Bike">
+                        <label for="vehicle1">Severe symptoms (extreme shakiness, increased heart rate, sweating,
+                            confusion, or loss of consciousness)
+                        </label><br>
+                    </div>
+                </div>
+                <div class="button">
+                    <button onclick="loadPrevious()" class="previous" type="button">Previous</button>
+                    <button onclick="fun()" class="next" type="button">Next</button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="image-div">
+
+
+
+
+
+            <img class="image-class" src="./assets/image 4.png" alt="f" />
+        </div>
+    </div>
+</body>
+
+</html>

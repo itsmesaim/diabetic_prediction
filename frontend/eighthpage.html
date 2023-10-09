@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .main {
+            display: flex;
+            width: 100%;
+            background: #bdedf2;
+            height: -webkit-fill-available;
+        }
+
+        .parent-div {
+            width: 50%;
+            justify-content: space-around;
+            margin-top: 5%;
+            margin-left: 0;
+            margin-right: 0;
+            height: 100%;
+        }
+
+        .image-div {
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+            height: 100%;
+            margin: 5%;
+        }
+
+        .image-class {
+            width: 100%;
+            height: 100%;
+        }
+
+        .secondbox {
+            height: 90%;
+            width: 100%;
+        }
+
+        .secondbox-heading {
+            margin-left: 5%;
+            margin-top: 10%;
+            height: 30%;
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 40px;
+            color: #312f2f;
+        }
+
+        .secondbox-selectheading {
+            font-style: normal;
+            margin-left: 10%;
+            font-weight: 600;
+            font-size: 17px;
+            color: #53828c;
+        }
+
+        .selectbox {
+            margin-top: 5%;
+            margin-left: 5%;
+            height: 50px;
+            background: #53828c;
+            box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 7px;
+        }
+
+        .selectbox-data {
+            width: 100%;
+            height: 20%;
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 19px;
+            line-height: 28px;
+            /* color: #FAFAFA; */
+        }
+
+        .button {
+            margin-top: 15%;
+            display: flex;
+            height: 30%;
+            width: 60%;
+            justify-content: space-around;
+        }
+
+        .previous {
+            border: none;
+            width: 25%;
+            height: 50px;
+            left: 81px;
+            top: 650px;
+
+            background: #90cbd9;
+            border-radius: 2px;
+        }
+
+        .next {
+            border: none;
+            width: 25%;
+            height: 50px;
+            left: 300px;
+            top: 650px;
+
+            background: #90cbd9;
+            border-radius: 2px;
+        }
+
+        .next:hover {
+            background-color: brown;
+        }
+
+        .input-type {
+            width: 98%;
+            height: 45px;
+            background: #53828c;
+            border: 4px;
+        }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fun() {
+            let radio1 = document.getElementById("1");
+            let loadData = JSON.parse(localStorage.getItem("data"));
+            let data = { ...loadData, pregnancies: radio1?.value };
+            localStorage.setItem("data", JSON.stringify(data));
+
+            let user = localStorage.getItem("data");
+            console.log(user);
+
+            // getting props from api
+            
+
+            let userAge = user.age;
+            let userBp = user.bloodpressure;
+            let userSkinth = user.skinthickness;
+            let userGulcose = user.gulcose;
+            let userInsulin = user.insulin;
+            let userDiabet = user.diabetespedigreefunction;
+            let userBmi = user.bmi;
+            let userPreg = user.pregnancies;
+
+
+            if (
+                (userAge > 18,
+                    userBp > 100,
+                    userSkinth > 10,
+                    userGulcose > 80,
+                    userInsulin > 50,
+                    userDiabet < 0.5,
+                    userBmi > 22,
+                    userPreg > 2)
+            ) {
+                alert("You may have diabetic better to have doctor consorne")
+            }
+            else {
+                alert("you are healthy");
+            }
+            window.location.href = 'index.html'
+        }
+        function loadPrevious() {
+            console.log("Sample 134");
+            window.location.href = "seventpage.html";
+        }
+    </script>
+    "
+
+    <div class="main">
+        <div class="parent-div">
+            <div class="secondbox">
+                <div class="secondbox-heading">
+                    <p>
+                        How many time you have been pregnant, including both live births
+                        and miscarriages
+                    </p>
+                </div>
+
+                <div class="selectbox">
+                    <div class="selectbox-data">
+                        <input class="input-type" id="1" name="vehicle1" value="0" />
+                        <label for="vehicle1"></label><br />
+                    </div>
+                </div>
+
+                <div class="button">
+                    <button onclick="loadPrevious()" class="previous" type="button">
+                        Previous
+                    </button>
+                    <button onclick="fun()" class="next" type="button">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="image-div">
+            <img class="image-class" src="./assets/image 8.png" alt="f" />
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .main {
+            display: flex;
+            width: 100%;
+            background: #bdedf2;
+            height: -webkit-fill-available;
+        }
+
+        .parent-div {
+            width: 50%;
+            justify-content: space-around;
+            margin-top: 5%;
+            margin-left: 0;
+            margin-right: 0;
+            height: 100%;
+        }
+
+
+        .image-div {
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+            height: 100%;
+            margin: 5%;
+
+
+        }
+
+        .image-class {
+            width: 100%;
+            height: 100%;
+
+        }
+
+
+
+        .secondbox {
+            height: 90%;
+            width: 100%;
+
+        }
+
+        .secondbox-heading {
+
+            margin-left: 5%;
+            margin-top: 10%;
+            height: 30%;
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 40px;
+            color: #312f2f;
+        }
+
+        .secondbox-selectheading {
+            font-style: normal;
+            margin-left: 10%;
+            font-weight: 600;
+            font-size: 17px;
+            color: #53828C;
+        }
+
+
+
+        .selectbox {
+            margin-top: 5%;
+            margin-left: 5%;
+            height: 50px;
+            background: #53828C;
+            box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 7px;
+        }
+
+        .selectbox-data {
+            width: 100%;
+            height: 20%;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 19px;
+            line-height: 28px;
+            /* color: #FAFAFA; */
+        }
+
+
+
+        .button {
+
+            margin-top: 15%;
+            display: flex;
+            height: 30%;
+            width: 60%;
+            justify-content: space-around;
+
+        }
+
+        .previous {
+            border: none;
+            width: 25%;
+            height: 50px;
+            left: 81px;
+            top: 650px;
+
+            background: #90CBD9;
+            border-radius: 2px;
+        }
+
+        .next {
+            border: none;
+            width: 25%;
+            height: 50px;
+            left: 300px;
+            top: 650px;
+
+            background: #90CBD9;
+            border-radius: 2px;
+        }
+
+        .next:hover {
+            background-color: brown;
+        }
+
+        .input-type {
+            width: 98%;
+            height: 45px;
+            background: #53828C;
+            border: 4px
+        }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function submit(event) {
+            let radio1 = document.getElementById('1');
+            let loadData = JSON.parse(localStorage.getItem('data'))
+            let data = { ...loadData, pregnancies: radio1?.value }
+            localStorage.setItem("data", JSON.stringify(data))
+
+            let user = localStorage.getItem("data");
+            console.log(user);
+
+
+            // let userAge = user.age;
+            // let userBp = user.bloodpressure;
+            // let userSkinth = user.skinthickness;
+            // let userGulcose = user.gulcose;
+            // let userInsulin = user.insulin;
+            // let userDiabet = user.diabetespedigreefunction;
+            // let userBmi = user.bmi;
+            // let userPreg = user.pregnancies;
+
+
+            event.preventDefault();
+
+            const url = 'https://diabetesprediction-production-f6ed.up.railway.app/predict';
+            const inputData = JSON.stringify(
+                {
+                    pregnancies: user.age,
+                    glucose: user.gulcose,
+                    bloodpressure: user.bloodpressure,
+                    skinthickness: user.skinthickness,
+                    insulin: user.insulin,
+                    bmi: user.bmi,
+                    diabetespedigreefunction: user.diabetespedigreefunction,
+                    age: user.age
+                });
+            
+            console.log(inputData);
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: inputData
+                });
+
+                const responseData = await response.json();
+                // Do something with the responseData
+                console.log(responseData);
+                if (responseData == "You are Healthy") {
+                    document.getElementsByClassName("result")[0].innerHTML = "<h1>You are Healthy</h1>"
+                }
+                else {
+                    document.getElementsByClassName("result")[0].innerHTML = "<h1>You are Diabetes</h1>"
+                }
+            } catch (error) {
+                console.log(error.message);
+            }
+        }
+    
+        // const url = 'https://diabetesprediction-production-f6ed.up.railway.app/predict';
+
+        // const inputData = {
+        //     pregnancies: userPreg,
+        //     glucose: userGulcose,
+        //     bloodpressure: userBp,
+        //     skinthickness: userSkinth,
+        //     insulin: userInsulin,
+        //     bmi: userBmi,
+        //     diabetespedigreefunction: userDiabet,
+        //     age: userAge
+        // };
+
+        // fetch(url, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(inputData)
+        // })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         // Do something with the response data
+        //     })
+        //     .catch(error => {
+        //         console.error(error);
+        //         // Handle any errors that occur
+        //     });
+
+        // alert("There are good chances you are not diabetic");
+        // window.location.href = 'index.html'
+
+        function loadPrevious() {
+            console.log("Sample 134")
+            window.location.href = 'seventpage.html'
+        }
+    </script>
+
+    <div class="main">
+        <div class="parent-div">
+            <div class="secondbox">
+                <div class="secondbox-heading">
+                    <p>
+                        How many time you have been pregnant, including both live births and miscarriages
+                    </p>
+                </div>
+
+
+                <div class="selectbox">
+                    <div class="selectbox-data">
+                        <input class="input-type" id="1" name="vehicle1" value=0>
+                        <label for="vehicle1"></label><br>
+                    </div>
+                </div>
+
+                <div class="button">
+                    <button onclick="loadPrevious()" class="previous" type="button">Previous</button>
+                    <button onclick="submit(event)" class="next" type="submit">Submit</button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="image-div">
+            <img class="image-class" src="./assets/image 8.png" alt="f" />
+        </div>
+    </div>
+</body>
+
+</html> -->
